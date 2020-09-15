@@ -18,11 +18,20 @@ module.exports = function(grunt){
                 src: ['css/*.js'],
                 dest: 'build/styles.css'
             }
+        },
+        uglify: {
+            build: {
+                files: [{
+                    src: 'build/scripts.js',
+                    dest: 'build/scripts.js'
+                }]
+            }
         }
     });
 
     //load plugins
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify')
 
     //register tasks
     grunt.registerTask('concat-js', ['concat:js']);
